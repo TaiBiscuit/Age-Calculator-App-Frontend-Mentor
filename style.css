@@ -1,0 +1,178 @@
+:root{
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    --off-white: hsl(0, 0%, 94%);
+    --light-gray: hsl(0, 0%, 86%);
+    --smokey-gray: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins';
+    background-color: var(--light-gray);
+}
+
+.container{
+    display: flex;
+    margin-top: 6rem;
+    justify-content: center;
+}
+
+.box{
+    border-radius: 20px;
+    border-bottom-right-radius: 25%;
+    width: 330px;
+    height: 470px;
+    padding: 3rem 1.5rem 4rem 1.5rem;
+    background-color: white;
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    color: var(--smokey-gray);
+}
+
+input{
+    width: 78px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--light-gray);
+    text-align: left;
+    padding: 0.5rem;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+label{
+    font-weight: 700;
+}
+
+.reset{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 32%;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--purple);
+    padding: 0.5rem;
+}
+
+.reset img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: var(--purple);
+}
+
+.reset:hover img, .reset:hover{
+    background-color: black;
+}
+
+li{
+    list-style: none;
+    font-size: 50px;
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-weight: 1000;
+    line-height: 40px;
+}
+
+.year-output{
+    margin-top: 3.5rem;
+}
+
+.output-num{
+    color: var(--purple);
+}
+
+
+@media only screen and (min-width:1440px) {
+
+    main{
+        height: 98vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .box{
+        width: 600px;
+    }
+
+    .reset{
+        top:46%;
+        right: 35%;
+        margin-right: 0;
+    }
+
+    .input-container{
+        justify-content: left;
+    }
+
+    .inputs{
+        margin-right: 2rem;
+    }
+
+    input{
+        width: 115px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
