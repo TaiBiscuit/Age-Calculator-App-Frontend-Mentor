@@ -14,25 +14,27 @@
     <div class="container">
       <div class="box">
         <div class="input-container">
-          <div class="inputs">
-            <label for="day">DAY</label>
-            <input type="number" max="24" min="1" placeholder="DD">
+          <form action="" id="form">
+            <div class="inputs">
+              <label for="day">DAY</label>
+              <input type="number" max="31" min="1" placeholder="DD" id='dayF' required>
+            </div>
+            <div class="inputs">
+              <label for="day">MONTH</label>
+              <input type="number" max="12" min="1" placeholder="MM" id="monthF" required>
+            </div>
+            <div class="inputs">
+              <label for="day">YEAR</label>
+              <input type="number" min="1930" placeholder="YYYY" id="yearF" required>
+            </div>
           </div>
-          <div class="inputs">
-            <label for="day">MONTH</label>
-            <input type="number" max="12" min="1" placeholder="MM">
-          </div>
-          <div class="inputs">
-            <label for="day">YEAR</label>
-            <input type="number" max="2030" min="1930" placeholder="YYYY">
-          </div>
-        </div>
         <button class="reset"><img src="./assets/images/icon-arrow.svg" class="img"></button>
+          </form>
         <div class="output">
           <ul>
-            <li id="year-output" class="year-output"><span class="output-num" id="output-num">32</span> years</li>
-            <li id="month-output" class="month-output"><span class="output-num" id="output-num">3</span> months</li>
-            <li id="day-output" class="day-output"><span class="output-num" id="output-num">24</span> days</li>
+            <li id="year-output" class="year-output"><span class="output-num" id="output-year">--</span> years</li>
+            <li id="month-output" class="month-output"><span class="output-num" id="output-month">--</span> months</li>
+            <li id="day-output" class="day-output"><span class="output-num" id="output-day">--</span> days</li>
           </ul>
         </div>
       </div>

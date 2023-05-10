@@ -20,6 +20,10 @@ body{
     background-color: var(--light-gray);
 }
 
+form{
+    display: flex;
+}
+
 .container{
     display: flex;
     margin-top: 6rem;
@@ -67,7 +71,7 @@ label{
     position: absolute; 
     left: 0; 
     right: 0; 
-    top: 32%;
+    top: 30%;
     margin-left: auto; 
     margin-right: auto; 
     width: 60px;
