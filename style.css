@@ -63,6 +63,10 @@ input{
     font-weight: 800;
 }
 
+input:not(.unfilled){
+    border-color: red;
+}
+
 label{
     font-weight: 700;
 }
