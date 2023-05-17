@@ -24,6 +24,13 @@ form{
     display: flex;
 }
 
+.span{
+    font-size: 13px;
+    font-style: italic;
+    font-weight:lighter;
+    color: red;
+}
+
 .container{
     display: flex;
     margin-top: 6rem;
@@ -145,6 +152,10 @@ li{
     input{
         width: 115px;
     }
+}
+
+.hide{
+    display: none;
 }
 
 

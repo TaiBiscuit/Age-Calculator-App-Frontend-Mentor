@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,300;1,400;1,800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Age calculator app</title>
 </head>
@@ -18,14 +19,22 @@
             <div class="inputs">
               <label for="day">DAY</label>
               <input type="number" class="dayF inpQue unfilled" min="1" placeholder="DD" id='dayF' >
+              <span class="span spanReq hide">This field is required</span>
+              <span class="span spanDay hide">Must be a valid day</span>
+              <span class="span spanDate hide">Must be a valid date</span>
+
             </div>
             <div class="inputs">
               <label for="day">MONTH</label>
               <input type="number" class="monthF inpQue unfilled" min="1" placeholder="MM" id="monthF" >
+              <span class="span spanReq hide">This field is required</span>
+              <span class="span spanMonth hide">Must be a valid month</span>
             </div>
             <div class="inputs">
               <label for="day">YEAR</label>
               <input type="number" class="yearF inpQue unfilled" placeholder="YYYY" id="yearF" >
+              <span class="span spanReq hide">This field is required</span>
+              <span class="span spanYear hide">Must be in the past</span>
             </div>
           </div>
         <button class="reset"><img src="./assets/images/icon-arrow.svg" class="img"></button>

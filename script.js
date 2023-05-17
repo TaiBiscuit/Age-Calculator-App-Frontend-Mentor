@@ -5,11 +5,13 @@ const yearF = document.getElementById('yearF');
 const outputDay = document.getElementById('output-day');
 const outputMonth = document.getElementById('output-month');
 const outputYear = document.getElementById('output-year');
-
-const inputDay = document.getElementsByClassName('dayF');
-const inputMonth = document.getElementsByClassName('monthF');
-const inputYear = document.getElementsByClassName('yearF');
 const outputs = document.querySelectorAll('.inpQue');
+const spansReq = document.querySelectorAll('.spanReq');
+//SPAN
+const spanM = document.getElementsByClassName('spanMonth');
+const spanY = document.getElementsByClassName('spanYear');
+const spanD = document.getElementsByClassName('spanDay');
+const spanDate = document.getElementsByClassName('spanDate');
 
 
 const DATE = new Date;
@@ -23,30 +25,47 @@ form.addEventListener('submit', (e) => {
     const inputDayValue = dayF.value;
     const inputMonthValue = monthF.value;
     const inputYearValue = yearF.value;
+    const inputs = [inputDayValue, inputMonthValue, inputYearValue];
     const dayExisted = monthList[inputMonthValue - 1] - inputDayValue ;
+    let counter = 0;
 
-    for(let i = 0; i < outputs.length; i++){
-        if(outputs[i].value.length == 0){
-            console.log(outputs[i].value.length)
+    for(let i = 0; i < inputs.length; i++) {
+        if (inputs[i] == "") {
             outputs[i].classList.remove('unfilled');
-        } else {
-            const birthDate = new Date(`${inputMonthValue}/${inputDayValue}/${inputYearValue}`);
-            const birthDay = birthDate.getDate();
-            const birthMonth = birthDate.getMonth() +1;
-            const birthYear = birthDate.getFullYear();
-            calculateDif(birthDay, birthMonth, birthYear); 
-        }
-    } 
-    if(inputYearValue > year){
-        inputYear[0].classList.remove('unfilled');
+            spansReq[i].classList.remove('hide');
+            } else {
+                counter++
+            }
     }
 
-    if(dayExisted < 0) {
-        const hasIt = dayF.classList.contains('unfilled');
-        inputDay[0].classList.remove('unfilled') 
-        console.log(inputDay[0].classList)
-        return console.log('nope')
-    } 
+    if(counter == 3) {
+        const birthDate = new Date(`${inputMonthValue}/${inputDayValue}/${inputYearValue}`);
+        const birthDay = birthDate.getDate();
+        const birthMonth = birthDate.getMonth() +1;
+        const birthYear = birthDate.getFullYear();
+
+        if(inputYearValue > year) {
+            yearF.classList.remove('unfilled');
+            spanY.classList.remove('hide');
+        }
+
+        if(inputMonthValue > month) {
+            monthF.classList.remove('unfilled');
+            return console.log('Enter a valid Month!');
+        }
+
+        if(inputDayValue > day) {
+            dayF.classList.remove('unfilled');   
+            return console.log('Enter a valid day');
+        }
+
+        if(dayExisted < 0) {
+            const hasIt = dayF.classList.contains('unfilled');
+            inputDay[0].classList.remove('unfilled') 
+            return console.log('nope')
+        };
+        calculateDif(birthDay, birthMonth, birthYear); 
+    };
 });
 
 const cleanForm = () => {
@@ -56,6 +75,7 @@ const cleanForm = () => {
 };
 
 const calculateDif = (dayF, monthF, yearF) => {
+
     let resultDay = day;
     let resultYear = (yearF - year) * -1; 
     let resultMonth = 0;
@@ -65,7 +85,6 @@ const calculateDif = (dayF, monthF, yearF) => {
         countUp(resultMonth, outputMonth);
         countUp(resultYear, outputYear); 
     } else if((monthF - month == 0)){
-        console.log(dayF)
         resultDay = dayF;
         resultMonth = 1;
         countUp(resultDay, outputDay);
@@ -90,3 +109,19 @@ const countUp = (number, place) => {
         }
     }, 30);
 };
+
+
+/*
+    for(let i = 0; i < outputs.length; i++){
+        if(outputs[i].value.length == 0){
+            outputs[i].classList.remove('unfilled');
+        } else {
+            outputs[i].classList.add('unfilled');
+            const birthDate = new Date(`${inputMonthValue}/${inputDayValue}/${inputYearValue}`);
+            const birthDay = birthDate.getDate();
+            const birthMonth = birthDate.getMonth() +1;
+            const birthYear = birthDate.getFullYear();
+            calculateDif(birthDay, birthMonth, birthYear); 
+        }
+    } 
+*/
